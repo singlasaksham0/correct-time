@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>World Clocks — Digital & Analog Timezones</title>
+  <link rel="stylesheet" href="clock.css" />
+</head>
+<body>
+  <main class="clock-app" aria-live="polite">
+    <header class="header">
+      <h1>World Clocks</h1>
+
+      <div class="controls" role="region" aria-label="Clock controls">
+        <div class="add-zone">
+          <input id="tz-input" list="tz-list" placeholder="Add timezone (e.g. Europe/London)" aria-label="Timezone input" />
+          <datalist id="tz-list"></datalist>
+          <button id="add-tz" class="btn">Add</button>
+        </div>
+
+        <label class="option">
+          <input id="toggle-analog" type="checkbox" />
+          Analog
+        </label>
+
+        <label class="option">
+          <input id="toggle-12h" type="checkbox" />
+          12-hour
+        </label>
+
+        <button id="reset-default" class="btn ghost">Reset</button>
+      </div>
+    </header>
+
+    <section id="clocks" class="clocks" aria-live="polite" aria-label="Timezones"></section>
+
+    <footer class="footer">
+      <p>Times are generated using the browser's Intl APIs (no external API required).</p>
+      <p class="small muted">Tip: type a timezone like "America/New_York", or pick from the suggestions. Your selections are saved in localStorage.</p>
+    </footer>
+  </main>
+
+  <script src="clock.js"></script>
+</body>
+</html>
